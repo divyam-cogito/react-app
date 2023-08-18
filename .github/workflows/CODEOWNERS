@@ -2,4 +2,4 @@
 *.js @divyam-cogito
 *.yml @divyam-cogito
 /public/ @divyam-cogito
-
+/src/ @divyam-cogito
