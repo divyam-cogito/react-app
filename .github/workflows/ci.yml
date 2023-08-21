@@ -1,4 +1,4 @@
-name: CI Process First
+name: CI
 on:
   pull_request:
     branches: [develop]
@@ -19,7 +19,7 @@ jobs:
       - run: npm test -- --coverage
         env:
           CI: true
-      - name: Build Project
+      - name: Build Project on Surge
         if: github.event_name == 'push'
         run: npx surge --project ./build --domain https://gruesome-animal-divyam-loves-mal.surge.sh/
         env:
