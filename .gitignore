@@ -7,6 +7,10 @@
 
 # testing
 /coverage
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/feature/workflows
 # misc
 .DS_Store
 .env.local
