@@ -1,5 +1,5 @@
 * @divyam-cogito
 *.js @divyam-cogito
-*.yml @divyamrbohra
+*.yml @divyam-cogito
 /public/ @divyam-cogito
 /src/ @divyam-cogito
