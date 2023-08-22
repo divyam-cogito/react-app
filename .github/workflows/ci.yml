@@ -1,9 +1,9 @@
 name: CI
 on:
   pull_request:
-    branches: [develop]
+    branches: [develop, master]
   push:
-    branches: [develop]
+    branches: [develop, master]
 
 jobs:
   build:
@@ -32,8 +32,13 @@ jobs:
         with:
           name: build
           path: build
-      - name: Build Project on Surge
+      - name: Create a Release
         if: github.event_name == 'push'
+        run: npx semantic-release
+        env: 
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Build Project on Surge
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: npm run build
       - name: Upload Test Coverage
         uses: actions/upload-artifact@v1
