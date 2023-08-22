@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions: read|write
     steps:
       - uses: actions/checkout@v2
       - name: Cache node_modules
